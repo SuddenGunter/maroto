@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-func main(){
+func main() {
 	file := pdf.NewMaroto(gofpdf.OrientationPortrait, consts.A4)
 	file.Row(90, func() {
 		file.Col(func() {
