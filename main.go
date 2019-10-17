@@ -43,33 +43,33 @@ func main() {
 	file.Row(60, func() {
 		file.Col(func() {
 			file.Barcode("BAR CfODE", props.Barcode{
-				Left:    60,
-				Top:     1,
-				Center:  false,
-				Percent: 30,
-				Proportion: props.Proportion{4,3},
+				Left:       60,
+				Top:        1,
+				Center:     false,
+				Percent:    30,
+				Proportion: props.Proportion{4, 3},
 			})
 		})
 	})
 	file.Row(60, func() {
 		file.Col(func() {
 			file.Barcode("BAR CODE", props.Barcode{
-				Left:    50,
-				Top:     1,
-				Center:  false,
-				Percent: 30,
-				Proportion: props.Proportion{16,9},
+				Left:       50,
+				Top:        1,
+				Center:     false,
+				Percent:    30,
+				Proportion: props.Proportion{16, 9},
 			})
 		})
 	})
 	file.Row(60, func() {
 		file.Col(func() {
 			file.Barcode("BAR CODE", props.Barcode{
-				Left:    1,
-				Top:     1,
-				Center:  false,
-				Percent: 30,
-				Proportion: props.Proportion{16,9},
+				Left:       1,
+				Top:        1,
+				Center:     false,
+				Percent:    30,
+				Proportion: props.Proportion{16, 9},
 			})
 		})
 	})

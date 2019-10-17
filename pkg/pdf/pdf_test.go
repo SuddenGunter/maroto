@@ -715,7 +715,7 @@ func TestPdfMaroto_QrCode(t *testing.T) {
 			},
 			func(t *testing.T, code *mocks.Code) {
 				code.AssertNumberOfCalls(t, "AddQr", 1)
-				code.AssertCalled(t, "AddQr", "Code1", 0.0, 0.0, 1.0, 20.0,  props.Rect{Percent: 100, Center: false})
+				code.AssertCalled(t, "AddQr", "Code1", 0.0, 0.0, 1.0, 20.0, props.Rect{Percent: 100, Center: false})
 			},
 			func(m pdf.Maroto) {
 				m.Row(20, func() {

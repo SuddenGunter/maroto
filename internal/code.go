@@ -57,7 +57,7 @@ func (s *code) AddBar(code string, marginTop float64, indexCol float64, qtdCols 
 	if prop.Center {
 		x, y, w, h = s.math.GetRectCenterColProperties(actualWidthPerCol, actualWidthPerCol*heightPercentFromWidth, qtdCols, colHeight, indexCol, prop.Percent)
 	} else {
-		rectProps := props.Rect{Left:prop.Left, Top:prop.Top, Center:prop.Center, Percent: prop.Percent}
+		rectProps := props.Rect{Left: prop.Left, Top: prop.Top, Center: prop.Center, Percent: prop.Percent}
 		x, y, w, h = s.math.GetRectNonCenterColProperties(actualWidthPerCol, actualWidthPerCol*heightPercentFromWidth, qtdCols, colHeight, indexCol, rectProps)
 	}
 

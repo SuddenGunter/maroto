@@ -26,7 +26,7 @@ func TestCode_AddBar(t *testing.T) {
 		assertPdf   func(t *testing.T, pdf *mocks.Pdf)
 		assertMath  func(t *testing.T, math *mocks.Math)
 		assertError func(t *testing.T, err error)
-		prop props.Barcode
+		prop        props.Barcode
 	}{
 		{
 			"When everything works",
@@ -60,7 +60,7 @@ func TestCode_AddBar(t *testing.T) {
 			func(t *testing.T, err error) {
 				assert.Nil(t, err)
 			},
-			props.Barcode{Center:false, Percent: 100},
+			props.Barcode{Center: false, Percent: 100},
 		},
 		{
 			"When cannot generate QrCode",
@@ -88,7 +88,7 @@ func TestCode_AddBar(t *testing.T) {
 			func(t *testing.T, err error) {
 				assert.NotNil(t, err)
 			},
-			props.Barcode{Center:true, Percent: 100},
+			props.Barcode{Center: true, Percent: 100},
 		},
 	}
 
@@ -117,7 +117,7 @@ func TestCode_AddQr(t *testing.T) {
 		math       func() *mocks.Math
 		assertPdf  func(t *testing.T, pdf *mocks.Pdf)
 		assertMath func(t *testing.T, math *mocks.Math)
-		prop props.Rect
+		prop       props.Rect
 	}{
 		{
 			"When everything works",
@@ -148,7 +148,7 @@ func TestCode_AddQr(t *testing.T) {
 				math.AssertNumberOfCalls(t, "GetRectCenterColProperties", 1)
 				math.AssertCalled(t, "GetRectCenterColProperties", 50, 50, 5, 40, 2, 100)
 			},
-			props.Rect{Center:true, Percent:100},
+			props.Rect{Center: true, Percent: 100},
 		},
 	}
 
