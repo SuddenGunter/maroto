@@ -425,12 +425,7 @@ func (s *PdfMaroto) QrCode(code string, prop ...props.Rect) {
 
 	qtdCols := float64(len(s.colsClosures))
 	sumOfyOffsets := s.offsetY + rectProp.Top
-
-	if rectProp.Center {
-		s.Code.AddQr(code, sumOfyOffsets, s.rowColCount, qtdCols, s.rowHeight, rectProp.Percent)
-	} else {
-		s.Code.AddQr(code, sumOfyOffsets, s.rowColCount, qtdCols, s.rowHeight, rectProp.Percent)
-	}
+	s.Code.AddQr(code, sumOfyOffsets, s.rowColCount, qtdCols, s.rowHeight, rectProp)
 }
 
 func (s *PdfMaroto) createColSpace(actualWidthPerCol float64) {

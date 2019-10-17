@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/johnfercher/maroto/internal"
 	"github.com/johnfercher/maroto/internal/mocks"
+	"github.com/johnfercher/maroto/pkg/props"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"testing"
@@ -113,6 +114,7 @@ func TestCode_AddQr(t *testing.T) {
 		math       func() *mocks.Math
 		assertPdf  func(t *testing.T, pdf *mocks.Pdf)
 		assertMath func(t *testing.T, math *mocks.Math)
+		prop props.Rect
 	}{
 		{
 			"When everything works",
@@ -143,6 +145,7 @@ func TestCode_AddQr(t *testing.T) {
 				math.AssertNumberOfCalls(t, "GetRectCenterColProperties", 1)
 				math.AssertCalled(t, "GetRectCenterColProperties", 50, 50, 5, 40, 2, 100)
 			},
+			props.Rect{Center:true, Percent:100},
 		},
 	}
 
@@ -154,7 +157,7 @@ func TestCode_AddQr(t *testing.T) {
 		code := internal.NewCode(pdf, math)
 
 		// Act
-		code.AddQr(c.code, 10, 2, 5, 40, 100)
+		code.AddQr(c.code, 10, 2, 5, 40, c.prop)
 
 		// Assert
 		c.assertPdf(t, pdf)
