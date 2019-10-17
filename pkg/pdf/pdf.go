@@ -405,11 +405,7 @@ func (s *PdfMaroto) Barcode(code string, prop ...props.Barcode) (err error) {
 	qtdCols := float64(len(s.colsClosures))
 	sumOfyOffsets := s.offsetY + barcodeProp.Top
 
-	if barcodeProp.Center {
-		err = s.Code.AddBar(code, sumOfyOffsets, s.rowColCount, qtdCols, s.rowHeight, barcodeProp.Percent, barcodeProp.Proportion.Height/barcodeProp.Proportion.Width)
-	} else {
-		err = s.Code.AddBar(code, sumOfyOffsets, s.rowColCount, qtdCols, s.rowHeight, barcodeProp.Percent, barcodeProp.Proportion.Height/barcodeProp.Proportion.Width)
-	}
+	err = s.Code.AddBar(code, sumOfyOffsets, s.rowColCount, qtdCols, s.rowHeight, barcodeProp, barcodeProp.Proportion.Height/barcodeProp.Proportion.Width)
 
 	return
 }
